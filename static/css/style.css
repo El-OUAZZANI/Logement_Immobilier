@@ -4497,13 +4497,50 @@ body.site-background:has(.sidebar-layout) .main-content {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Empilement des lignes du tableau au lieu d'un defilement horizontal
+     force : plus lisible sur tablette/mobile, coherent avec le reste
+     du site (admin utilise deja ce traitement). */
   .owner-pro-table {
-    overflow-x: auto;
+    overflow-x: visible;
+  }
+
+  .owner-pro-table-head {
+    display: none;
   }
 
   .owner-pro-table-head,
   .owner-pro-table-row {
-    min-width: 1050px;
+    min-width: 0;
+  }
+
+  .owner-pro-table-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+    padding: 14px 16px;
+  }
+
+  .owner-pro-img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .owner-pro-title {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .owner-pro-table-row > div:nth-child(3),
+  .owner-pro-table-row > div:nth-child(4),
+  .owner-pro-table-row > div:nth-child(5) {
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  .owner-pro-actions {
+    flex-basis: 100%;
+    justify-content: flex-end;
   }
 
   .owner-request-grid {
@@ -4521,8 +4558,14 @@ body.site-background:has(.sidebar-layout) .main-content {
     font-size: 0;
   }
 
+  .owner-pro-link {
+    justify-content: center;
+    padding: 0;
+  }
+
   .owner-pro-link span {
     font-size: 24px;
+    width: auto;
   }
 
   .owner-pro-logout {
@@ -4579,49 +4622,6 @@ body.site-background:has(.sidebar-layout) .main-content {
     height: auto;
     padding: 14px 16px;
     gap: 4px;
-  }
-
-  .owner-pro-table {
-    overflow-x: visible;
-  }
-
-  .owner-pro-table-head {
-    display: none;
-  }
-
-  .owner-pro-table-head,
-  .owner-pro-table-row {
-    min-width: 0;
-  }
-
-  .owner-pro-table-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 12px;
-    padding: 14px 16px;
-  }
-
-  .owner-pro-img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .owner-pro-title {
-    flex: 1;
-    min-width: 120px;
-  }
-
-  .owner-pro-table-row > div:nth-child(3),
-  .owner-pro-table-row > div:nth-child(4),
-  .owner-pro-table-row > div:nth-child(5) {
-    font-size: 13px;
-    color: #64748b;
-  }
-
-  .owner-pro-actions {
-    flex-basis: 100%;
-    justify-content: flex-end;
   }
 }
 
