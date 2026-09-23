@@ -5177,7 +5177,12 @@ body.site-background:has(.sidebar-layout) .main-content {
 
 @media (max-width: 1100px) {
   .create-modern-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .create-left,
+  .create-right {
+    min-width: 0;
   }
 
   .create-map,
@@ -5203,6 +5208,14 @@ body.site-background:has(.sidebar-layout) .main-content {
 
   .photo-upload-box {
     width: 100%;
+  }
+
+  .photos-modern-row {
+    flex-wrap: wrap;
+  }
+
+  .photo-drop-zone {
+    width: 100% !important;
   }
 
   .create-modern-main {
