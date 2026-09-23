@@ -7299,12 +7299,18 @@ body.site-background:has(.sidebar-layout) .main-content {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.25);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
+  flex-shrink: 0;
 }
+
+.admin-kpi-card.blue .admin-kpi-icon { color: #2563eb; }
+.admin-kpi-card.green .admin-kpi-icon { color: #22c55e; }
+.admin-kpi-card.orange .admin-kpi-icon { color: #f59e0b; }
+.admin-kpi-card.cyan .admin-kpi-icon { color: #14b8a6; }
 
 .admin-kpi-card span {
   display: block;
@@ -7658,12 +7664,20 @@ body.site-background:has(.sidebar-layout) .main-content {
   width: 64px !important;
   height: 64px !important;
   border-radius: 50% !important;
-  background: rgba(255,255,255,.25) !important;
+  background: #fff !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-size: 32px !important;
+  flex-shrink: 0 !important;
 }
+
+/* Icone opaque coloree au lieu d'un blanc translucide sur fond blanc
+   (illisible/fantomatique) : coherence avec les cartes cote proprietaire. */
+.admin-kpi-card.blue .admin-kpi-icon { color: #2563eb !important; }
+.admin-kpi-card.green .admin-kpi-icon { color: #22c55e !important; }
+.admin-kpi-card.orange .admin-kpi-icon { color: #f59e0b !important; }
+.admin-kpi-card.cyan .admin-kpi-icon { color: #14b8a6 !important; }
 
 .admin-kpi-card span {
   display: block !important;
@@ -8085,16 +8099,21 @@ body.site-background:has(.sidebar-layout) .main-content {
     width: 100% !important;
   }
 
+  .admin-form-grid,
+  .admin-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Les filtres (jusqu'a 7 colonnes) deviennent illisibles bien avant 560px :
+   chaque champ se retrouve reduit a quelques pixels (juste la fleche du
+   select visible, sans le texte). Seuil beaucoup plus large. */
+@media (max-width: 950px) {
   .admin-pro-filter.users,
   .admin-pro-filter.annonces,
   .admin-pro-filter.validation,
   .admin-pro-filter.signalements,
   .admin-validation-card {
-    grid-template-columns: 1fr !important;
-  }
-
-  .admin-form-grid,
-  .admin-detail-grid {
     grid-template-columns: 1fr !important;
   }
 }
