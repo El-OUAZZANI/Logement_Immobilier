@@ -53,13 +53,13 @@
         <div class="visit-card">
 
           <div class="visitor-info">
-            <div class="visitor-photo">👤</div>
+            <div class="visitor-photo"><i class="bx bxs-user"></i></div>
             <div>
               <h3>{{ demande.visiteur.get_full_name|default:demande.visiteur.username }}</h3>
-              <p>✉ {{ demande.visiteur.email|default:"Email non renseigné" }}</p>
+              <p><i class="bx bx-envelope"></i> {{ demande.visiteur.email|default:"Email non renseigné" }}</p>
 
               {% if demande.visiteur.profile.telephone %}
-                <p>📞 {{ demande.visiteur.profile.telephone }}</p>
+                <p><i class="bx bx-phone"></i> {{ demande.visiteur.profile.telephone }}</p>
               {% endif %}
             </div>
           </div>
@@ -70,21 +70,21 @@
                 {% if photo %}
                   <img src="{{ photo.image.url }}" alt="{{ demande.annonce.titre }}">
                 {% else %}
-                  🏠
+                  <i class="bx bxs-home"></i>
                 {% endif %}
               {% endwith %}
             </div>
 
             <div>
               <h3>{{ demande.annonce.titre }}</h3>
-              <p>📍 {{ demande.annonce.ville }}</p>
+              <p><i class="bx bxs-map"></i> {{ demande.annonce.ville }}</p>
               <p>{{ demande.annonce.surface }} m²</p>
             </div>
           </div>
 
           <div class="visit-date">
-            <p>📅 {{ demande.date_demande|date:"d/m/Y à H:i" }}</p>
-            <p class="visit-message">💬 {{ demande.message|default:"Aucun message envoyé."|truncatechars:70 }}</p>
+            <p><i class="bx bx-calendar"></i> {{ demande.date_demande|date:"d/m/Y à H:i" }}</p>
+            <p class="visit-message"><i class="bx bx-message-square-dots"></i> {{ demande.message|default:"Aucun message envoyé."|truncatechars:70 }}</p>
           </div>
 
           <div class="visit-status-box">

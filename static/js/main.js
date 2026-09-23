@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.toggle("dark-mode", isDark);
 
     if (themeToggle) {
-      themeToggle.textContent = isDark ? "☀️" : "🌙";
+      themeToggle.innerHTML = isDark ? '<i class="bx bx-sun"></i>' : '<i class="bx bx-moon"></i>';
       themeToggle.setAttribute("aria-label", isDark ? "Activer le mode jour" : "Activer le mode nuit");
     }
   }

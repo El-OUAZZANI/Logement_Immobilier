@@ -60,11 +60,11 @@
       <img src="{% static 'images/logo.png' %}" alt="Logement Immobilier" class="site-logo-img">
     </a>
 
-    <div class="fav-brand">🏠 Logement <span>Immobilier</span></div>
+    <div class="fav-brand"><i class="bx bxs-home"></i> Logement <span>Immobilier</span></div>
 
     <form method="get" class="fav-search">
       <input type="text" name="q" placeholder="Rechercher une ville, un quartier, une adresse..." value="{{ request.GET.q }}">
-      <button type="submit">🔍</button>
+      <button type="submit"><i class="bx bx-search"></i></button>
     </form>
 
     {% include "includes/user_profile_button.html" %}
@@ -77,8 +77,8 @@
 
     <div class="fav-toolbar">
       <div class="fav-tabs">
-        <a href="#" class="fav-tab active">▦ Grille</a>
-        <a href="#" class="fav-tab">☰ Liste</a>
+        <a href="#" class="fav-tab active"><i class="bx bx-grid"></i> Grille</a>
+        <a href="#" class="fav-tab"><i class="bx bx-menu"></i> Liste</a>
       </div>
 
       <div class="fav-tools">
@@ -87,7 +87,7 @@
           <option>Plus anciennes</option>
         </select>
 
-        <button type="button">▽ Filtres</button>
+        <button type="button"><i class="bx bx-filter-alt"></i> Filtres</button>
 
         <a href="{% url 'dashboard:visitor_dashboard' %}" class="fav-page-btn">
           ← Retour
@@ -106,12 +106,12 @@
               {% if photo %}
                 <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
               {% else %}
-                🏠
+                <i class="bx bxs-home"></i>
               {% endif %}
             {% endwith %}
           </div>
 
-          <div class="fav-heart">♥</div>
+          <div class="fav-heart"><i class="bx bxs-heart"></i></div>
 
           <div class="fav-body">
             <div class="fav-name">{{ annonce.titre }}</div>

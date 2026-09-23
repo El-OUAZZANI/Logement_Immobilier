@@ -15,14 +15,14 @@
     <header class="owner-pro-topbar">
 
       <div class="owner-search-box">
-        <span>🔍</span>
+        <span><i class="bx bx-search"></i></span>
         <input type="text" placeholder="Rechercher une annonce, une ville, un quartier...">
       </div>
 
       <div class="owner-top-user">
 
   <a href="{% url 'visits:demandes_visite' %}" class="owner-bell">
-    🔔
+    <i class="bx bx-bell"></i>
 
     {% if nb_notifications > 0 %}
       <span>{{ nb_notifications }}</span>
@@ -42,7 +42,7 @@
         <h1>Mon Tableau de bord</h1>
 
         <div class="owner-alert-info">
-          👋 Bienvenue, {{ request.user.get_full_name|default:request.user.username }} !
+          <i class="bx bx-happy"></i> Bienvenue, {{ request.user.get_full_name|default:request.user.username }} !
           Vous avez <strong>{{ publiees }} annonces publiées.</strong>
         </div>
       </div>
@@ -51,21 +51,21 @@
       <div class="owner-pro-kpi-grid">
 
         <div class="owner-pro-kpi blue">
-          <div class="owner-pro-kpi-icon">🏢</div>
+          <div class="owner-pro-kpi-icon"><i class="bx bx-building"></i></div>
           <div>
             <span>Total annonces</span>
             <strong>{{ total }}</strong>
           </div>
-          <div class="kpi-bg-icon">▥</div>
+          <div class="kpi-bg-icon"><i class="bx bx-buildings"></i></div>
         </div>
 
         <div class="owner-pro-kpi green">
-          <div class="owner-pro-kpi-icon">✓</div>
+          <div class="owner-pro-kpi-icon"><i class="bx bx-check"></i></div>
           <div>
             <span>Annonces publiées</span>
             <strong>{{ publiees }}</strong>
           </div>
-          <div class="kpi-bg-icon">▥</div>
+          <div class="kpi-bg-icon"><i class="bx bx-buildings"></i></div>
         </div>
 
         <div class="owner-pro-kpi orange">
@@ -78,12 +78,12 @@
         </div>
 
         <div class="owner-pro-kpi gray">
-          <div class="owner-pro-kpi-icon">📄</div>
+          <div class="owner-pro-kpi-icon"><i class="bx bx-file"></i></div>
           <div>
             <span>Brouillons</span>
             <strong>{{ brouillons }}</strong>
           </div>
-          <div class="kpi-bg-icon">▤</div>
+          <div class="kpi-bg-icon"><i class="bx bx-list-ul"></i></div>
         </div>
 
       </div>
@@ -92,7 +92,7 @@
       <div class="owner-pro-card">
 
         <div class="owner-pro-card-header">
-          <h2>☷ Mes annonces</h2>
+          <h2><i class="bx bx-list-ul"></i> Mes annonces</h2>
 
           <a href="{% url 'properties:creer_annonce' %}" class="owner-add-small">
             + Créer une annonce
@@ -119,7 +119,7 @@
                   {% if photo %}
                     <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
                   {% else %}
-                    🏠
+                    <i class="bx bxs-home"></i>
                   {% endif %}
                 {% endwith %}
               </div>
@@ -154,18 +154,18 @@
                   <a href="{% url 'properties:modifier_annonce' annonce.pk %}"
                      class="owner-pro-action edit"
                      title="Modifier">
-                    ✎
+                    <i class="bx bx-pencil"></i>
                   </a>
                 {% else %}
                   <span class="owner-pro-action disabled" title="Modification impossible">
-                    ✎
+                    <i class="bx bx-pencil"></i>
                   </span>
                 {% endif %}
 
                 <a href="{% url 'properties:detail_annonce_owner' annonce.pk %}"
                    class="owner-pro-action view"
                    title="Voir">
-                  👁
+                  <i class="bx bx-show"></i>
                 </a>
 
               </div>
@@ -198,7 +198,7 @@
       <div class="owner-pro-card owner-requests-card">
 
   <div class="owner-pro-card-header">
-    <h2>🗓 Demandes de visite récentes</h2>
+    <h2><i class="bx bx-calendar"></i> Demandes de visite récentes</h2>
 
     <a href="{% url 'visits:demandes_visite' %}" class="owner-view-all-pro">
       Voir toutes les demandes →
@@ -211,7 +211,7 @@
       <div class="owner-request-box real-request">
 
         <div class="request-avatar">
-          👤
+          <i class="bx bxs-user"></i>
         </div>
 
         <div class="request-content">
@@ -222,8 +222,8 @@
           </a>
 
           <div class="request-meta">
-            <span>📅 {{ demande.date_demande|date:"d/m/Y" }}</span>
-            <span>🕘 {{ demande.date_demande|date:"H:i" }}</span>
+            <span><i class="bx bx-calendar"></i> {{ demande.date_demande|date:"d/m/Y" }}</span>
+            <span><i class="bx bx-time"></i> {{ demande.date_demande|date:"H:i" }}</span>
           </div>
 
           {% if demande.statut == "en_attente" %}
@@ -239,13 +239,13 @@
               <form method="post" action="{% url 'visits:accepter_demande' demande.pk %}">
                 {% csrf_token %}
                 <input type="hidden" name="reponse_proprietaire" value="Votre demande de visite a été acceptée.">
-                <button type="submit" class="request-btn accept">✓ Accepter</button>
+                <button type="submit" class="request-btn accept"><i class="bx bx-check"></i> Accepter</button>
               </form>
 
               <form method="post" action="{% url 'visits:refuser_demande' demande.pk %}">
                 {% csrf_token %}
                 <input type="hidden" name="reponse_proprietaire" value="Votre demande de visite a été refusée.">
-                <button type="submit" class="request-btn refuse">✕ Refuser</button>
+                <button type="submit" class="request-btn refuse"><i class="bx bx-x"></i> Refuser</button>
               </form>
             </div>
           {% endif %}

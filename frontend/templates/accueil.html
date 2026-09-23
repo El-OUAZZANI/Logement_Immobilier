@@ -8,9 +8,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+i.bx {
+  vertical-align: -0.125em;
+  line-height: 1;
+  margin-right: 0.35em;
+}
 
 html {
   scroll-behavior: smooth;
@@ -1292,7 +1299,7 @@ body.dark-mode .header-nav a {
 
       <div class="adv-card ri" style="--d:0s">
         <div class="adv-icon">
-          🔍
+          <i class="bx bx-search"></i>
         </div>
 
         <h3>Recherche rapide</h3>
@@ -1309,7 +1316,7 @@ body.dark-mode .header-nav a {
 
       <div class="adv-card ri" style="--d:.12s">
         <div class="adv-icon">
-          📍
+          <i class="bx bxs-map"></i>
         </div>
 
         <h3>Carte interactive</h3>
@@ -1326,7 +1333,7 @@ body.dark-mode .header-nav a {
 
       <div class="adv-card ri" style="--d:.24s">
         <div class="adv-icon">
-          📅
+          <i class="bx bx-calendar"></i>
         </div>
 
         <h3>Demande de visite</h3>
@@ -1362,7 +1369,7 @@ body.dark-mode .header-nav a {
 
       <div class="sp-card ri" style="--d:0s">
         <div class="sp-card-top">
-          <div class="sp-icon">👤</div>
+          <div class="sp-icon"><i class="bx bxs-user"></i></div>
           <span class="sp-role">Visiteur</span>
         </div>
 
@@ -1373,10 +1380,10 @@ body.dark-mode .header-nav a {
         </p>
 
         <ul class="sp-feats">
-          <li>✦ Recherche avancée</li>
-          <li>✦ Gestion des favoris</li>
-          <li>✦ Demandes de visite</li>
-          <li>✦ Consultation des annonces</li>
+          <li><i class="bx bx-check"></i> Recherche avancée</li>
+          <li><i class="bx bx-check"></i> Gestion des favoris</li>
+          <li><i class="bx bx-check"></i> Demandes de visite</li>
+          <li><i class="bx bx-check"></i> Consultation des annonces</li>
         </ul>
 
         <a href="{% url 'accounts:login' %}?role=visiteur" class="sp-btn">
@@ -1388,7 +1395,7 @@ body.dark-mode .header-nav a {
         <div class="sp-popular">Populaire</div>
 
         <div class="sp-card-top">
-          <div class="sp-icon">🏠</div>
+          <div class="sp-icon"><i class="bx bxs-home"></i></div>
           <span class="sp-role">Propriétaire</span>
         </div>
 
@@ -1399,10 +1406,10 @@ body.dark-mode .header-nav a {
         </p>
 
         <ul class="sp-feats">
-          <li>✦ Publication d'annonces</li>
-          <li>✦ Tableau de bord</li>
-          <li>✦ Gestion des visites</li>
-          <li>✦ Suivi des demandes</li>
+          <li><i class="bx bx-check"></i> Publication d'annonces</li>
+          <li><i class="bx bx-check"></i> Tableau de bord</li>
+          <li><i class="bx bx-check"></i> Gestion des visites</li>
+          <li><i class="bx bx-check"></i> Suivi des demandes</li>
         </ul>
 
         <a href="{% url 'accounts:login' %}?role=proprietaire" class="sp-btn owner">
@@ -1412,7 +1419,7 @@ body.dark-mode .header-nav a {
 
       <div class="sp-card ri" style="--d:.26s">
         <div class="sp-card-top">
-          <div class="sp-icon">🛡️</div>
+          <div class="sp-icon"><i class="bx bx-shield-alt-2"></i>️</div>
           <span class="sp-role">Administrateur</span>
         </div>
 
@@ -1423,10 +1430,10 @@ body.dark-mode .header-nav a {
         </p>
 
         <ul class="sp-feats">
-          <li>✦ Gestion des utilisateurs</li>
-          <li>✦ Modération des annonces</li>
-          <li>✦ Signalements</li>
-          <li>✦ Validation des biens</li>
+          <li><i class="bx bx-check"></i> Gestion des utilisateurs</li>
+          <li><i class="bx bx-check"></i> Modération des annonces</li>
+          <li><i class="bx bx-check"></i> Signalements</li>
+          <li><i class="bx bx-check"></i> Validation des biens</li>
         </ul>
 
         <a href="{% url 'accounts:login' %}?role=admin" class="sp-btn">
@@ -1485,7 +1492,7 @@ body.dark-mode .header-nav a {
 </footer>
 
 <button id="themeToggle" class="theme-toggle-btn" type="button" title="Changer le thème">
-  🌙
+  <i class="bx bx-moon"></i>
 </button>
 
 <script src="{% static 'js/main.js' %}?v=20260518"></script>

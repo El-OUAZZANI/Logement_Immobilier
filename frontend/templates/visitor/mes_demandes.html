@@ -27,7 +27,7 @@
       </a>
 
       <a href="{% url 'favorites:mes_favoris' %}" class="visitor-nav-btn">
-        ♡ Mes favoris
+        <i class="bx bx-heart"></i> Mes favoris
       </a>
 
       {% include "includes/user_profile_button.html" %}
@@ -79,7 +79,7 @@
 
             <!-- ANNONCE -->
             <div class="request-annonce-cell">
-              <div class="request-annonce-icon">🏠</div>
+              <div class="request-annonce-icon"><i class="bx bxs-home"></i></div>
 
               <div>
                 <strong>{{ demande.annonce.titre }}</strong>
@@ -131,7 +131,7 @@
             <!-- ACTION -->
             <div class="request-action-cell">
               <a href="{% url 'properties:detail_annonce' demande.annonce.pk %}" class="request-view-btn">
-                👁 Voir
+                <i class="bx bx-show"></i> Voir
               </a>
             </div>
 
@@ -144,7 +144,7 @@
       {% else %}
 
         <div class="visitor-empty-requests">
-          <div class="empty-icon">📅</div>
+          <div class="empty-icon"><i class="bx bx-calendar"></i></div>
           <h3>Aucune demande de visite</h3>
           <p>Vous n’avez encore envoyé aucune demande. Consultez les annonces et demandez une visite.</p>
 

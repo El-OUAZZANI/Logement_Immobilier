@@ -8,6 +8,12 @@
   font-family: "Open Sans", sans-serif;
 }
 
+i.bx {
+  vertical-align: -0.125em;
+  line-height: 1;
+  margin-right: 0.35em;
+}
+
 html, body {
   width: 100%;
   min-height: 100%;

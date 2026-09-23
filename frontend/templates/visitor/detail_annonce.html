@@ -614,12 +614,12 @@
               {% if photo %}
                 <img id="visitorMainImage" src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
               {% else %}
-                <div class="visitor-no-photo">🏠</div>
+                <div class="visitor-no-photo"><i class="bx bxs-home"></i></div>
               {% endif %}
             {% endwith %}
 
             <a href="{% url 'favorites:toggle_favori' annonce.pk %}" class="visitor-heart-top">
-              {% if est_favori %}♥{% else %}♡{% endif %}
+              {% if est_favori %}<i class="bx bxs-heart"></i>{% else %}<i class="bx bx-heart"></i>{% endif %}
             </a>
           </div>
 
@@ -630,7 +630,7 @@
                 <img src="{{ photo.image.url }}" alt="Photo annonce">
               </button>
             {% empty %}
-              <div class="visitor-thumb visitor-thumb-empty active">🏠</div>
+              <div class="visitor-thumb visitor-thumb-empty active"><i class="bx bxs-home"></i></div>
             {% endfor %}
           </div>
 
@@ -642,17 +642,17 @@
             <div class="visitor-main-specs">
 
               <div class="visitor-spec-item">
-                <span class="visitor-spec-icon">🏷</span>
+                <span class="visitor-spec-icon"><i class="bx bx-purchase-tag"></i></span>
                 <strong>{{ annonce.prix|floatformat:0 }} DH</strong>
               </div>
 
               <div class="visitor-spec-item">
-                <span class="visitor-spec-icon">📐</span>
+                <span class="visitor-spec-icon"><i class="bx bx-ruler"></i></span>
                 <strong>{{ annonce.surface }} m²</strong>
               </div>
 
               <div class="visitor-spec-item">
-                <span class="visitor-spec-icon">🏢</span>
+                <span class="visitor-spec-icon"><i class="bx bx-building"></i></span>
                 <strong>{{ annonce.get_type_bien_display }}</strong>
               </div>
 
@@ -725,12 +725,12 @@
           <div class="visitor-owner-list">
 
             <div class="visitor-owner-line">
-              <span>👤</span>
+              <span><i class="bx bxs-user"></i></span>
               <strong>{{ annonce.proprietaire.get_full_name|default:annonce.proprietaire.username }}</strong>
             </div>
 
             <div class="visitor-owner-line">
-              <span>✉️</span>
+              <span><i class="bx bx-envelope"></i>️</span>
               <strong>
                 {% if annonce.proprietaire.email %}
                   {{ annonce.proprietaire.email }}
@@ -743,21 +743,21 @@
             {% if profil_proprietaire %}
               {% if profil_proprietaire.telephone %}
                 <div class="visitor-owner-line">
-                  <span>📞</span>
+                  <span><i class="bx bx-phone"></i></span>
                   <strong>{{ profil_proprietaire.telephone }}</strong>
                 </div>
               {% endif %}
 
               {% if profil_proprietaire.ville %}
                 <div class="visitor-owner-line">
-                  <span>📍</span>
+                  <span><i class="bx bxs-map"></i></span>
                   <strong>{{ profil_proprietaire.ville }}</strong>
                 </div>
               {% endif %}
 
               {% if profil_proprietaire.adresse %}
                 <div class="visitor-owner-line">
-                  <span>🏠</span>
+                  <span><i class="bx bxs-home"></i></span>
                   <strong>{{ profil_proprietaire.adresse }}</strong>
                 </div>
               {% endif %}
@@ -770,21 +770,21 @@
         <div class="visitor-actions-box">
 
           <a href="{% url 'visits:demander_visite' annonce.pk %}" class="visitor-action-btn visit">
-            📅 Demander une visite
+            <i class="bx bx-calendar"></i> Demander une visite
           </a>
 
           <a href="{% url 'favorites:toggle_favori' annonce.pk %}" class="visitor-action-btn save">
             {% if est_favori %}
-              ♥ Retirer
+              <i class="bx bxs-heart"></i> Retirer
             {% else %}
-              ♡ Sauvegarder
+              <i class="bx bx-heart"></i> Sauvegarder
             {% endif %}
           </a>
 
         </div>
 
         <a href="{% url 'properties:signaler_annonce' annonce.pk %}" class="visitor-report-btn">
-          🚩 Signaler cette annonce
+          <i class="bx bx-flag-alt"></i> Signaler cette annonce
         </a>
 
       </div>
@@ -806,7 +806,7 @@
                 {% if photo %}
                   <img src="{{ photo.image.url }}" alt="{{ item.titre }}">
                 {% else %}
-                  <div class="visitor-similar-empty-img">🏠</div>
+                  <div class="visitor-similar-empty-img"><i class="bx bxs-home"></i></div>
                 {% endif %}
               {% endwith %}
             </a>
@@ -821,7 +821,7 @@
             </div>
 
             <a href="{% url 'favorites:toggle_favori' item.pk %}" class="visitor-similar-heart">
-              ♡
+              <i class="bx bx-heart"></i>
             </a>
 
           </div>

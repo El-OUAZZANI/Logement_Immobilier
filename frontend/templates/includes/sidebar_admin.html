@@ -11,15 +11,15 @@
   <nav class="admin-modern-nav">
 
     <a href="{% url 'dashboard:admin_dashboard' %}" class="{% if active == 'dashboard' %}active{% endif %}">
-      <span>◉</span> Dashboard
+      <span><i class="bx bxs-dashboard"></i></span> Dashboard
     </a>
 
     <a href="{% url 'dashboard:admin_utilisateurs' %}" class="{% if active == 'utilisateurs' %}active{% endif %}">
-      <span>♙</span> Utilisateurs
+      <span><i class="bx bxs-user-badge"></i></span> Utilisateurs
     </a>
 
     <a href="{% url 'dashboard:admin_valider' %}" class="{% if active == 'annonces_validation' %}active{% endif %}">
-      <span>◷</span> Annonces à valider
+      <span><i class="bx bx-time-five"></i></span> Annonces à valider
     </a>
 
     <a href="{% url 'dashboard:admin_annonces' %}" class="{% if active == 'toutes_annonces' %}active{% endif %}">
@@ -27,18 +27,18 @@
     </a>
 
     <a href="{% url 'dashboard:admin_signalements' %}" class="{% if active == 'signalements' %}active{% endif %}">
-      <span>⚑</span> Signalements
+      <span><i class="bx bx-flag"></i></span> Signalements
     </a>
 
     <a href="{% url 'dashboard:profil_admin' %}" class="{% if active == 'profil' %}active{% endif %}">
-      <span>○</span> Mon Profil
+      <span><i class="bx bxs-user-circle"></i></span> Mon Profil
     </a>
 
   </nav>
 
   <div class="admin-modern-logout">
     <a href="{% url 'accounts:logout' %}">
-      ↪ Logout
+      <i class="bx bx-log-out"></i> Logout
     </a>
   </div>
 

@@ -79,7 +79,7 @@
               {% if annonce.photos.all %}
                 <img src="{{ annonce.photos.all.0.image.url }}" alt="{{ annonce.titre }}">
               {% else %}
-                🏠
+                <i class="bx bxs-home"></i>
               {% endif %}
             </div>
 
@@ -87,11 +87,11 @@
               <h2 class="admin-validation-title">{{ annonce.titre }}</h2>
 
               <div class="admin-validation-meta">
-                <span>👤 {{ annonce.proprietaire.username }}</span>
-                <span>📍 {{ annonce.ville }}</span>
-                <span>🏷️ {{ annonce.prix }} MAD</span>
-                <span>📐 {{ annonce.surface }} m²</span>
-                <span>🏢 {{ annonce.get_type_bien_display }}</span>
+                <span><i class="bx bxs-user"></i> {{ annonce.proprietaire.username }}</span>
+                <span><i class="bx bxs-map"></i> {{ annonce.ville }}</span>
+                <span><i class="bx bx-purchase-tag"></i>️ {{ annonce.prix }} MAD</span>
+                <span><i class="bx bx-ruler"></i> {{ annonce.surface }} m²</span>
+                <span><i class="bx bx-building"></i> {{ annonce.get_type_bien_display }}</span>
               </div>
 
               <p class="admin-validation-desc">
@@ -99,7 +99,7 @@
               </p>
 
               <div class="admin-validation-meta">
-                <span>📅 Soumise le {{ annonce.date_soumission|date:"d/m/Y H:i" }}</span>
+                <span><i class="bx bx-calendar"></i> Soumise le {{ annonce.date_soumission|date:"d/m/Y H:i" }}</span>
               </div>
             </div>
 
@@ -109,7 +109,7 @@
                     onsubmit="return confirm('Voulez-vous approuver cette annonce ?');">
                 {% csrf_token %}
                 <button type="submit" class="admin-btn approve">
-                  ✓ Approuver
+                  <i class="bx bx-check"></i> Approuver
                 </button>
               </form>
 
@@ -118,7 +118,7 @@
                     onsubmit="return confirm('Voulez-vous rejeter cette annonce ?');">
                 {% csrf_token %}
                 <button type="submit" class="admin-btn reject">
-                  ✕ Rejeter
+                  <i class="bx bx-x"></i> Rejeter
                 </button>
               </form>
 
@@ -130,7 +130,7 @@
           </div>
         {% empty %}
           <div class="admin-empty admin-table-card">
-            🎉 Aucune annonce en attente de validation.
+            <i class="bx bx-party"></i> Aucune annonce en attente de validation.
           </div>
         {% endfor %}
 

@@ -64,7 +64,7 @@
           <div class="admin-users-row">
 
             <div class="admin-user-info">
-              <div class="admin-user-avatar">👤</div>
+              <div class="admin-user-avatar"><i class="bx bxs-user"></i></div>
               <strong>{{ user.get_full_name|default:user.username }}</strong>
             </div>
 
@@ -93,8 +93,8 @@
             <span>{{ user.date_joined|date:"d/m/Y H:i" }}</span>
 
             <div class="admin-user-actions">
-              <a href="{% url 'dashboard:admin_detail_utilisateur' user.pk %}" title="Voir détails">👁</a>
-              <a href="{% url 'dashboard:admin_modifier_utilisateur' user.pk %}" title="Modifier">✎</a>
+              <a href="{% url 'dashboard:admin_detail_utilisateur' user.pk %}" title="Voir détails"><i class="bx bx-show"></i></a>
+              <a href="{% url 'dashboard:admin_modifier_utilisateur' user.pk %}" title="Modifier"><i class="bx bx-pencil"></i></a>
 
               {% if user != request.user %}
                 <form method="post"
@@ -102,7 +102,7 @@
                       onsubmit="return confirm('Voulez-vous vraiment changer le statut de cet utilisateur ?');">
                   {% csrf_token %}
                   <button type="submit" title="Activer/Désactiver">
-                    {% if user.is_active %}⛔{% else %}✅{% endif %}
+                    {% if user.is_active %}<i class="bx bx-block"></i>{% else %}<i class="bx bx-check-circle"></i>{% endif %}
                   </button>
                 </form>
 
@@ -110,7 +110,7 @@
                       action="{% url 'dashboard:admin_supprimer_utilisateur' user.pk %}"
                       onsubmit="return confirm('Voulez-vous vraiment supprimer cet utilisateur définitivement ?');">
                   {% csrf_token %}
-                  <button type="submit" class="delete" title="Supprimer">🗑</button>
+                  <button type="submit" class="delete" title="Supprimer"><i class="bx bx-trash"></i></button>
                 </form>
               {% else %}
                 <span class="status-user pending">Compte actuel</span>

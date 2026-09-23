@@ -36,7 +36,7 @@
                   onsubmit="return confirm('Voulez-vous approuver cette annonce ?');">
               {% csrf_token %}
               <button type="submit" class="admin-btn approve">
-                ✔ Approuver
+                <i class="bx bx-check"></i> Approuver
               </button>
             </form>
 
@@ -45,7 +45,7 @@
                   onsubmit="return confirm('Voulez-vous rejeter cette annonce ?');">
               {% csrf_token %}
               <button type="submit" class="admin-btn reject">
-                ✕ Rejeter
+                <i class="bx bx-x"></i> Rejeter
               </button>
             </form>
 
@@ -83,14 +83,14 @@
       <div class="admin-detail-grid">
 
         <div class="admin-pro-detail-card admin-detail-card">
-          <h2>📷 Photos</h2>
+          <h2><i class="bx bx-camera"></i> Photos</h2>
 
           <div class="admin-photo-main">
             {% with photo=photos.first %}
               {% if photo %}
                 <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
               {% else %}
-                <div>🏠</div>
+                <div><i class="bx bxs-home"></i></div>
               {% endif %}
             {% endwith %}
           </div>
@@ -101,13 +101,13 @@
                 <img src="{{ photo.image.url }}" alt="Photo">
               </div>
             {% empty %}
-              <div class="admin-thumb">🏠</div>
+              <div class="admin-thumb"><i class="bx bxs-home"></i></div>
             {% endfor %}
           </div>
         </div>
 
         <div class="admin-pro-detail-card admin-detail-card">
-          <h2>📄 Informations de l’annonce</h2>
+          <h2><i class="bx bx-file"></i> Informations de l’annonce</h2>
 
           <div class="admin-form-grid">
             <div class="admin-detail-field">
@@ -165,7 +165,7 @@
 
           <hr class="admin-divider">
 
-          <h3>👤 Propriétaire</h3>
+          <h3><i class="bx bxs-user"></i> Propriétaire</h3>
 
           <div class="admin-form-grid">
             <div class="admin-detail-field">
@@ -213,7 +213,7 @@
           {% if annonce.latitude and annonce.longitude %}
             <hr class="admin-divider">
 
-            <h3>🗺️ Localisation</h3>
+            <h3><i class="bx bx-map-alt"></i>️ Localisation</h3>
 
             <div id="map-admin" class="admin-map"></div>
           {% endif %}

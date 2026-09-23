@@ -461,7 +461,7 @@
     <!-- TOPBAR -->
     <header class="owner-pro-topbar">
 
-      <button class="owner-menu-btn">☰</button>
+      <button class="owner-menu-btn"><i class="bx bx-menu"></i></button>
 
       {% include "includes/user_profile_button.html" %}
 
@@ -485,21 +485,21 @@
       <div class="owner-pro-kpi-grid">
 
         <div class="owner-pro-kpi blue">
-          <div class="owner-pro-kpi-icon">🏢</div>
+          <div class="owner-pro-kpi-icon"><i class="bx bx-building"></i></div>
           <div>
             <span>Total annonces</span>
             <strong>{{ total }}</strong>
           </div>
-          <div class="kpi-bg-icon">▥</div>
+          <div class="kpi-bg-icon"><i class="bx bx-buildings"></i></div>
         </div>
 
         <div class="owner-pro-kpi green">
-          <div class="owner-pro-kpi-icon">✓</div>
+          <div class="owner-pro-kpi-icon"><i class="bx bx-check"></i></div>
           <div>
             <span>Publiées</span>
             <strong>{{ publiees }}</strong>
           </div>
-          <div class="kpi-bg-icon">▥</div>
+          <div class="kpi-bg-icon"><i class="bx bx-buildings"></i></div>
         </div>
 
         <div class="owner-pro-kpi orange">
@@ -512,12 +512,12 @@
         </div>
 
         <div class="owner-pro-kpi gray">
-          <div class="owner-pro-kpi-icon">📄</div>
+          <div class="owner-pro-kpi-icon"><i class="bx bx-file"></i></div>
           <div>
             <span>Brouillons</span>
             <strong>{{ brouillons }}</strong>
           </div>
-          <div class="kpi-bg-icon">▤</div>
+          <div class="kpi-bg-icon"><i class="bx bx-list-ul"></i></div>
         </div>
 
       </div>
@@ -526,7 +526,7 @@
       <div class="owner-pro-card">
 
         <div class="owner-pro-card-header">
-          <h2>☷ Mes annonces</h2>
+          <h2><i class="bx bx-list-ul"></i> Mes annonces</h2>
           <span>{{ total }} annonce{% if total > 1 %}s{% endif %} au total</span>
         </div>
 
@@ -550,7 +550,7 @@
                   {% if photo %}
                     <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
                   {% else %}
-                    🏠
+                    <i class="bx bxs-home"></i>
                   {% endif %}
                 {% endwith %}
               </div>
@@ -585,11 +585,11 @@
                   <a href="{% url 'properties:modifier_annonce' annonce.pk %}"
                      class="owner-pro-action"
                      title="Modifier">
-                    ✎
+                    <i class="bx bx-pencil"></i>
                   </a>
                 {% else %}
                   <span class="owner-pro-action disabled" title="Modification impossible">
-                    ✎
+                    <i class="bx bx-pencil"></i>
                   </span>
                 {% endif %}
 
@@ -597,13 +597,13 @@
                    class="owner-pro-action delete"
                    title="Supprimer"
                    onclick="return confirm('Supprimer cette annonce ?')">
-                  🗑
+                  <i class="bx bx-trash"></i>
                 </a>
 
                 <a href="{% url 'properties:detail_annonce_owner' annonce.pk %}"
                    class="owner-pro-action"
                    title="Voir">
-                  👁
+                  <i class="bx bx-show"></i>
                 </a>
 
               </div>

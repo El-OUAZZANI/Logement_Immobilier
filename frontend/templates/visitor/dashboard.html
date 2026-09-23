@@ -12,7 +12,7 @@
 
     <a href="{% url 'accounts:accueil' %}" class="visitor-logo site-logo-link">
       <img src="{% static 'images/logo.png' %}" alt="Logement Immobilier" class="site-logo-img">
-      🏠 <strong>Logement <span>Immobilier</span></strong>
+      <i class="bx bxs-home"></i> <strong>Logement <span>Immobilier</span></strong>
     </a>
 
     <!-- Recherche rapide en haut -->
@@ -23,17 +23,17 @@
         placeholder="Rechercher une annonce, une ville, un quartier..." 
         value="{{ request.GET.q }}"
       >
-      <button type="submit">🔍</button>
+      <button type="submit"><i class="bx bx-search"></i></button>
     </form>
 
     <div class="visitor-top-actions">
 
       <a href="{% url 'favorites:mes_favoris' %}" class="visitor-top-btn">
-        ♡ Mes favoris
+        <i class="bx bx-heart"></i> Mes favoris
       </a>
 
       <a href="{% url 'visits:mes_demandes_visiteur' %}" class="visitor-top-btn">
-        📅 Mes demandes
+        <i class="bx bx-calendar"></i> Mes demandes
       </a>
 
       <a href="{% url 'dashboard:visitor_dashboard' %}" class="visitor-top-btn">
@@ -53,7 +53,7 @@
     <form method="get" action="{% url 'dashboard:visitor_dashboard' %}" class="visitor-filters-card">
 
       <div class="visitor-search-line">
-        🔍
+        <i class="bx bx-search"></i>
         <input 
           type="text" 
           name="q" 
@@ -121,7 +121,7 @@
         </div>
 
         <button type="submit" class="visitor-search-btn">
-          🔍 Rechercher
+          <i class="bx bx-search"></i> Rechercher
         </button>
 
       </div>
@@ -140,7 +140,7 @@
             {% if photo %}
               <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
             {% else %}
-              <div class="visitor-no-img">🏠</div>
+              <div class="visitor-no-img"><i class="bx bxs-home"></i></div>
             {% endif %}
           {% endwith %}
         </div>
@@ -155,12 +155,12 @@
           </div>
 
           <p class="visitor-location">
-            📍 {{ annonce.ville }}
+            <i class="bx bxs-map"></i> {{ annonce.ville }}
           </p>
 
           <div class="visitor-price-row">
             <strong>{{ annonce.prix|floatformat:0 }} DH</strong>
-            <span>📐 {{ annonce.surface }} m²</span>
+            <span><i class="bx bx-ruler"></i> {{ annonce.surface }} m²</span>
           </div>
 
           <a href="{% url 'properties:detail_annonce' annonce.pk %}" class="visitor-detail-btn">

@@ -22,7 +22,7 @@
         <div class="owner-detail-actions">
           {% if annonce.statut == "brouillon" %}
             <a href="{% url 'properties:modifier_annonce' annonce.pk %}" class="detail-btn edit">
-              ✏️ Modifier
+              <i class="bx bx-pencil"></i>️ Modifier
             </a>
           {% endif %}
 
@@ -36,14 +36,14 @@
 
         <!-- Photos -->
         <div class="owner-detail-card">
-          <h2>📷 Photos</h2>
+          <h2><i class="bx bx-camera"></i> Photos</h2>
 
           <div class="owner-main-photo">
             {% with photo=photos.first %}
               {% if photo %}
                 <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
               {% else %}
-                <div class="no-photo">🏠</div>
+                <div class="no-photo"><i class="bx bxs-home"></i></div>
               {% endif %}
             {% endwith %}
           </div>
@@ -54,14 +54,14 @@
                 <img src="{{ photo.image.url }}" alt="Photo annonce">
               </div>
             {% empty %}
-              <div class="owner-thumb">🏠</div>
+              <div class="owner-thumb"><i class="bx bxs-home"></i></div>
             {% endfor %}
           </div>
         </div>
 
         <!-- Infos -->
         <div class="owner-detail-card">
-          <h2>📄 Informations</h2>
+          <h2><i class="bx bx-file"></i> Informations</h2>
 
           <div class="detail-info-row">
             <span>Titre</span>
@@ -115,7 +115,7 @@
           </div>
 
           {% if annonce.latitude and annonce.longitude %}
-            <div class="detail-map-title">🗺️ Localisation</div>
+            <div class="detail-map-title"><i class="bx bx-map-alt"></i>️ Localisation</div>
             <div id="map-owner-detail"></div>
           {% endif %}
 

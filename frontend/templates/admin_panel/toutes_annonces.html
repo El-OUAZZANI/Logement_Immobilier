@@ -89,7 +89,7 @@
                 {% if photo %}
                   <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
                 {% else %}
-                  🏠
+                  <i class="bx bxs-home"></i>
                 {% endif %}
               {% endwith %}
             </div>
@@ -125,18 +125,18 @@
             <div class="admin-user-actions">
 
               <a href="{% url 'dashboard:admin_detail_annonce' annonce.pk %}" title="Voir">
-                👁
+                <i class="bx bx-show"></i>
               </a>
 
               <a href="{% url 'dashboard:admin_modifier_annonce' annonce.pk %}" title="Modifier">
-                ✎
+                <i class="bx bx-pencil"></i>
               </a>
 
               <form method="post"
                     action="{% url 'dashboard:admin_supprimer_annonce' annonce.pk %}"
                     onsubmit="return confirm('Voulez-vous vraiment supprimer cette annonce ?');">
                 {% csrf_token %}
-                <button type="submit" class="delete" title="Supprimer">🗑</button>
+                <button type="submit" class="delete" title="Supprimer"><i class="bx bx-trash"></i></button>
               </form>
 
             </div>

@@ -17,6 +17,15 @@ html {
   text-size-adjust: 100%;
 }
 
+/* Icones Boxicons utilisees en remplacement des emojis dans tout le site :
+   alignement et espacement coherents quel que soit le contexte
+   (titres, boutons, badges), independamment des espaces dans le HTML source. */
+i.bx {
+  vertical-align: -0.125em;
+  line-height: 1;
+  margin-right: 0.35em;
+}
+
 :root {
   --navy: #1a2744;
   --navy-light: #243156;

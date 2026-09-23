@@ -14,7 +14,7 @@
     </a>
 
     <div class="visit-request-brand">
-      🏠 <strong>Logement <span>Immobilier</span></strong>
+      <i class="bx bxs-home"></i> <strong>Logement <span>Immobilier</span></strong>
     </div>
 
     <div class="visit-request-nav">
@@ -51,7 +51,7 @@
             {% if photo %}
               <img src="{{ photo.image.url }}" alt="{{ annonce.titre }}">
             {% else %}
-              <div class="visit-no-image">🏠</div>
+              <div class="visit-no-image"><i class="bx bxs-home"></i></div>
             {% endif %}
           {% endwith %}
         </div>
@@ -65,7 +65,7 @@
           <h2>{{ annonce.titre }}</h2>
 
           <p class="visit-location">
-            📍 {{ annonce.ville }}{% if annonce.adresse %}, {{ annonce.adresse }}{% endif %}
+            <i class="bx bxs-map"></i> {{ annonce.ville }}{% if annonce.adresse %}, {{ annonce.adresse }}{% endif %}
           </p>
 
           <div class="visit-specs">
@@ -89,11 +89,11 @@
             <h3>Propriétaire</h3>
 
             <p>
-              👤 {{ annonce.proprietaire.get_full_name|default:annonce.proprietaire.username }}
+              <i class="bx bxs-user"></i> {{ annonce.proprietaire.get_full_name|default:annonce.proprietaire.username }}
             </p>
 
             <p>
-              ✉️ {{ annonce.proprietaire.email|default:"Email non renseigné" }}
+              <i class="bx bx-envelope"></i>️ {{ annonce.proprietaire.email|default:"Email non renseigné" }}
             </p>
           </div>
 
@@ -131,7 +131,7 @@
           <div class="visit-form-actions">
 
             <button type="submit" class="visit-submit-btn">
-              📅 Envoyer la demande
+              <i class="bx bx-calendar"></i> Envoyer la demande
             </button>
 
             <a href="{% url 'properties:detail_annonce' annonce.pk %}" class="visit-cancel-btn">
