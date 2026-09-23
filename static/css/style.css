@@ -10,6 +10,13 @@
   padding: 0;
 }
 
+html {
+  /* Empeche les navigateurs mobiles d'agrandir automatiquement le texte
+     (effet "tout est zoome" sur certaines mises en page). */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 :root {
   --navy: #1a2744;
   --navy-light: #243156;
@@ -4522,6 +4529,32 @@ body.site-background:has(.sidebar-layout) .main-content {
   }
 }
 
+@media (max-width: 560px) {
+  .owner-pro-kpi {
+    min-height: 0;
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .owner-pro-kpi-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+  }
+
+  .owner-pro-kpi span {
+    font-size: 13px;
+  }
+
+  .owner-pro-kpi strong {
+    font-size: 24px;
+  }
+
+  .kpi-bg-icon {
+    font-size: 36px;
+  }
+}
+
 /* =========================
    PAGE MES ANNONCES MODERNE
 ========================= */
@@ -7902,7 +7935,13 @@ body.site-background:has(.sidebar-layout) .main-content {
   }
 
   .admin-table-head,
-  .admin-table-row {
+  .admin-table-row,
+  .admin-table.dashboard .admin-table-head,
+  .admin-table.dashboard .admin-table-row,
+  .admin-table.signalements .admin-table-head,
+  .admin-table.signalements .admin-table-row,
+  .admin-table.user-annonces .admin-table-head,
+  .admin-table.user-annonces .admin-table-row {
     grid-template-columns: 1fr !important;
   }
 }
@@ -7910,6 +7949,26 @@ body.site-background:has(.sidebar-layout) .main-content {
 @media (max-width: 560px) {
   .admin-kpi-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .admin-kpi-card {
+    height: auto !important;
+    padding: 14px 16px !important;
+    gap: 14px !important;
+  }
+
+  .admin-kpi-icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 20px !important;
+  }
+
+  .admin-kpi-card span {
+    font-size: 14px !important;
+  }
+
+  .admin-kpi-card strong {
+    font-size: 24px !important;
   }
 
   .admin-pro-search {
