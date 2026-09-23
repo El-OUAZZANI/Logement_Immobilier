@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load format_filters %}
 
 {% block title %}Dashboard Visiteur{% endblock %}
 
@@ -159,7 +160,7 @@
           </p>
 
           <div class="visitor-price-row">
-            <strong>{{ annonce.prix|floatformat:0 }} DH</strong>
+            <strong>{{ annonce.prix|espace_milliers }} DH</strong>
             <span><i class="bx bx-ruler"></i> {{ annonce.surface }} m²</span>
           </div>
 

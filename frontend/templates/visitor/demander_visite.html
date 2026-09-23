@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load format_filters %}
 
 {% block title %}Demander une visite{% endblock %}
 
@@ -71,7 +72,7 @@
           <div class="visit-specs">
             <div>
               <span>Prix</span>
-              <strong>{{ annonce.prix|floatformat:0 }} DH</strong>
+              <strong>{{ annonce.prix|espace_milliers }} DH</strong>
             </div>
 
             <div>

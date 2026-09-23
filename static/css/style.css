@@ -6701,7 +6701,8 @@ body.site-background:has(.sidebar-layout) .main-content {
   display: none !important;
   position: absolute !important;
   right: 0 !important;
-  top: 66px !important;
+  top: 100% !important;
+  margin-top: 8px !important;
   width: 245px !important;
   background: #fff !important;
   border: 1px solid #e2e8f0 !important;
@@ -6729,8 +6730,10 @@ body.site-background:has(.sidebar-layout) .main-content {
   }
 
   .global-user-dropdown {
-    right: -10px !important;
+    left: 0 !important;
+    right: auto !important;
     width: 220px !important;
+    max-width: calc(100vw - 32px) !important;
   }
 }
 
@@ -8638,6 +8641,29 @@ body.site-background:has(.sidebar-layout) .main-content {
     height: 38px;
     padding: 0 12px;
     font-size: 13px;
+  }
+
+  /* Les cartes annonces gardent des tailles pensees pour une grille a 3
+     colonnes ; en 1 colonne sur mobile elles paraissent disproportionnees. */
+  .visitor-card-img {
+    height: 170px;
+  }
+
+  .visitor-card-body {
+    padding: 14px 16px;
+  }
+
+  .visitor-card h3 {
+    font-size: 17px;
+  }
+
+  .visitor-price-row strong {
+    font-size: 20px;
+  }
+
+  .visitor-location {
+    margin: 8px 0;
+    font-size: 14px;
   }
 }
 

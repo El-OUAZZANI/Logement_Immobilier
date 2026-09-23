@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load format_filters %}
 
 {% block title %}{{ annonce.titre }}{% endblock %}
 
@@ -643,7 +644,7 @@
 
               <div class="visitor-spec-item">
                 <span class="visitor-spec-icon"><i class="bx bx-purchase-tag"></i></span>
-                <strong>{{ annonce.prix|floatformat:0 }} DH</strong>
+                <strong>{{ annonce.prix|espace_milliers }} DH</strong>
               </div>
 
               <div class="visitor-spec-item">
@@ -694,7 +695,7 @@
 
             <div class="visitor-detail-line">
               <span>Prix</span>
-              <strong>{{ annonce.prix|floatformat:0 }} DH</strong>
+              <strong>{{ annonce.prix|espace_milliers }} DH</strong>
             </div>
 
             <div class="visitor-detail-line">
@@ -817,7 +818,7 @@
               </a>
               <p>{{ item.ville }}</p>
               <span>{{ item.surface }} m²</span>
-              <strong>{{ item.prix|floatformat:0 }} DH</strong>
+              <strong>{{ item.prix|espace_milliers }} DH</strong>
             </div>
 
             <a href="{% url 'favorites:toggle_favori' item.pk %}" class="visitor-similar-heart">
