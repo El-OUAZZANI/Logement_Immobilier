@@ -1,0 +1,45 @@
+{% load static %}
+<aside class="admin-modern-sidebar">
+
+  <a href="{% url 'accounts:accueil' %}" class="admin-modern-brand site-logo-link">
+    <div class="admin-modern-logo">⌂</div>
+    <div>
+      <img src="{% static 'images/logo.png' %}" alt="Logement Immobilier" class="site-logo-img">
+    </div>
+  </a>
+
+  <nav class="admin-modern-nav">
+
+    <a href="{% url 'dashboard:admin_dashboard' %}" class="{% if active == 'dashboard' %}active{% endif %}">
+      <span>◉</span> Dashboard
+    </a>
+
+    <a href="{% url 'dashboard:admin_utilisateurs' %}" class="{% if active == 'utilisateurs' %}active{% endif %}">
+      <span>♙</span> Utilisateurs
+    </a>
+
+    <a href="{% url 'dashboard:admin_valider' %}" class="{% if active == 'annonces_validation' %}active{% endif %}">
+      <span>◷</span> Annonces à valider
+    </a>
+
+    <a href="{% url 'dashboard:admin_annonces' %}" class="{% if active == 'toutes_annonces' %}active{% endif %}">
+      <span>⌂</span> Toutes les annonces
+    </a>
+
+    <a href="{% url 'dashboard:admin_signalements' %}" class="{% if active == 'signalements' %}active{% endif %}">
+      <span>⚑</span> Signalements
+    </a>
+
+    <a href="{% url 'dashboard:profil_admin' %}" class="{% if active == 'profil' %}active{% endif %}">
+      <span>○</span> Mon Profil
+    </a>
+
+  </nav>
+
+  <div class="admin-modern-logout">
+    <a href="{% url 'accounts:logout' %}">
+      ↪ Logout
+    </a>
+  </div>
+
+</aside>
