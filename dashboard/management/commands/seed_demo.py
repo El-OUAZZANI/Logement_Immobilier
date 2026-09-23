@@ -54,7 +54,7 @@ class Command(BaseCommand):
     help = "Cree un jeu de donnees de demonstration (idempotent : sans doublon si relance)."
 
     def handle(self, *args, **options):
-        admin = self._get_or_create_user("mohamed", "mohamed@example.com", "simo123", "admin")
+        admin = self._get_or_create_user("admin@example.com", "admin@example.com", "Admin1234", "admin")
         if not admin.is_superuser:
             admin.is_staff = True
             admin.is_superuser = True

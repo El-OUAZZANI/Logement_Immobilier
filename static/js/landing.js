@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
         list.classList.remove("active");
     });
 
+    const EMAIL_SUGGESTIONS = {
+        visiteur: "youssef@example.com",
+        proprietaire: "karim@example.com",
+        admin: "admin@example.com",
+    };
+
     function handleRoleChange(role) {
         if (role === "admin") {
             if (extraOptions) extraOptions.style.display = "none";
@@ -57,6 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             if (extraOptions) extraOptions.style.display = "flex";
             if (registerLink) registerLink.style.display = "block";
+        }
+
+        const usernameInput = document.getElementById("username");
+        if (usernameInput && EMAIL_SUGGESTIONS[role]) {
+            usernameInput.placeholder = EMAIL_SUGGESTIONS[role];
         }
     }
 

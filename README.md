@@ -69,7 +69,7 @@ La configuration de connexion à SQL Server se trouve dans `config/settings.py` 
 
 | Rôle | Identifiant | Mot de passe |
 |---|---|---|
-| Administrateur | `mohamed` | `simo123` |
+| Administrateur | `admin@example.com` | `Admin1234` |
 | Propriétaire | `karim@example.com` | `demo1234` |
 | Propriétaire | `sara@example.com` | `demo1234` |
 | Propriétaire | `nadia@example.com` | `demo1234` |
