@@ -660,17 +660,14 @@ body.dark-mode .report-cancel {
     padding-right: 0 !important;
   }
 
-  .owner-pro-logo.site-logo-link > div,
-  .admin-modern-brand.site-logo-link > div {
-    width: 58px;
-    height: 46px;
-    justify-content: center;
+  .owner-pro-logo.site-logo-link > div:last-child,
+  .admin-modern-brand.site-logo-link > div:last-child {
+    display: none;
   }
 
-  .owner-pro-logo.site-logo-link .site-logo-img,
-  .admin-modern-brand.site-logo-link .site-logo-img {
-    width: 120px !important;
-    height: auto !important;
-    max-width: none !important;
+  .owner-pro-logo.site-logo-link .owner-pro-logo-icon,
+  .admin-modern-brand.site-logo-link .admin-modern-logo {
+    display: flex !important;
+    margin: 0 auto;
   }
 }
