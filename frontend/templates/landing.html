@@ -96,6 +96,31 @@
         <div class="register-link" id="registerLink">
             <p>Vous n'avez pas de compte ? <a href="{% url 'accounts:register' %}" id="showRegister" class="forgot-register-link">S'inscrire</a></p>
         </div>
+
+        <div class="demo-accounts-box">
+            <p class="demo-accounts-title">🔑 Comptes de démonstration</p>
+
+            <div class="demo-account-row">
+                <div class="demo-account-info">
+                    <strong>Visiteur</strong> — <span>youssef@example.com</span>
+                </div>
+                <button type="button" class="demo-fill-btn" data-role="visiteur" data-email="youssef@example.com" data-password="demo1234">Remplir</button>
+            </div>
+
+            <div class="demo-account-row">
+                <div class="demo-account-info">
+                    <strong>Propriétaire</strong> — <span>karim@example.com</span>
+                </div>
+                <button type="button" class="demo-fill-btn" data-role="proprietaire" data-email="karim@example.com" data-password="demo1234">Remplir</button>
+            </div>
+
+            <div class="demo-account-row">
+                <div class="demo-account-info">
+                    <strong>Admin</strong> — <span>admin@example.com</span>
+                </div>
+                <button type="button" class="demo-fill-btn" data-role="admin" data-email="admin@example.com" data-password="Admin1234">Remplir</button>
+            </div>
+        </div>
     </form>
         <form id="registerForm" method="post" action="{% url 'accounts:register' %}" {% if not show_register %}style="display: none;"{% endif %}>
       {% csrf_token %}

@@ -73,6 +73,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (registerRole) registerRole.value = hiddenInput.value;
     handleRoleChange(hiddenInput.value);
+
+    const demoButtons = document.querySelectorAll(".demo-fill-btn");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+
+    demoButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const role = btn.getAttribute("data-role");
+            const email = btn.getAttribute("data-email");
+            const password = btn.getAttribute("data-password");
+
+            if (usernameInput) usernameInput.value = email;
+            if (passwordInput) passwordInput.value = password;
+
+            const item = list.querySelector('li[data-value="' + role + '"]');
+            if (item) {
+                selectedText.textContent = item.textContent;
+                hiddenInput.value = role;
+                if (registerRole) registerRole.value = role;
+                handleRoleChange(role);
+            }
+        });
+    });
 });
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
