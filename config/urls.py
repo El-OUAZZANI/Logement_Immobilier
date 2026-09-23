@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
 from django.conf import settings
-from django.conf.urls.static import static
+from django.views.static import serve as serve_static
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth import views as auth_views
 
@@ -24,5 +24,14 @@ urlpatterns = [
     
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Petit projet de demo : Django sert aussi les fichiers media en production
+# (WhiteNoise ne gere que les fichiers statiques, pas les uploads utilisateur).
+# `django.conf.urls.static.static()` refuse de fonctionner hors DEBUG, on
+# ajoute donc la route manuellement avec la meme vue.
+urlpatterns += [
+    re_path(
+        r"^%s(?P<path>.*)$" % settings.MEDIA_URL.lstrip("/"),
+        serve_static,
+        {"document_root": settings.MEDIA_ROOT},
+    ),
+]
