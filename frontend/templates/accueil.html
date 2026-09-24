@@ -315,7 +315,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* flex-start plutot que center : le contenu (titre + image) est souvent
+     plus haut que la fenetre, et un centrage pousserait alors le haut du
+     titre au-dessus de l'ecran, sous la barre de navigation, quelle que
+     soit la largeur/hauteur exacte de la fenetre. */
+  justify-content: flex-start;
   background: var(--white);
   z-index: 10;
 }
@@ -338,7 +342,7 @@ body {
   padding: 0;
   margin: 0 0 18px;
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: clamp(70px, 12.2vw, 210px);
+  font-size: clamp(70px, 10.8vw, 210px);
   font-weight: 900;
   letter-spacing: -0.08em;
   line-height: 0.85;
@@ -469,14 +473,6 @@ body {
 }
 
 @media(max-width:900px) {
-  /* Sur mobile, le bloc titre+sous-titre+image est souvent plus haut que la
-     fenetre : centrer verticalement (justify-content:center herite de
-     .hero-sticky) pousse alors le haut du titre au-dessus de l'ecran, sous
-     la barre de navigation. On aligne depuis le haut a la place. */
-  .hero-sticky {
-    justify-content: flex-start;
-  }
-
   .hero-content {
     padding-top: 110px;
   }
@@ -517,14 +513,6 @@ body {
 
   .hero-main-img {
     height: 450px;
-  }
-}
-
-/* Filet de securite : meme sur un large ecran, une fenetre basse (peu de
-   hauteur disponible) reproduit exactement le meme probleme de centrage. */
-@media(max-height:700px) {
-  .hero-sticky {
-    justify-content: flex-start;
   }
 }
 
