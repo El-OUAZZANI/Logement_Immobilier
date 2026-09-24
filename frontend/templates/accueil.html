@@ -1532,7 +1532,6 @@ body.dark-mode .header-nav a {
   var H_START = 520;
   var BR_START = 8;
   var IMG_ZOOM_START = 2.35;
-  var IMG_FOCUS_START = 58;
   var IMG_SHIFT_START = -300;
 
   function updateImageAnimation() {
@@ -1566,11 +1565,13 @@ body.dark-mode .header-nav a {
     if (heroImg) {
       heroImg.style.height = newH + 'px';
       var imgZoom = IMG_ZOOM_START - (IMG_ZOOM_START - 1) * easedProgress;
-      var imgFocus = IMG_FOCUS_START - (IMG_FOCUS_START - 50) * easedProgress;
       var imgShift = IMG_SHIFT_START * (1 - easedProgress);
       heroImg.style.transform = 'translateY(' + imgShift + 'px) scale(' + imgZoom + ')';
-      heroImg.style.transformOrigin = 'center ' + imgFocus + '%';
-      heroImg.style.objectPosition = 'center ' + imgFocus + '%';
+      /* Le point de recadrage reste fixe au centre : le faire varier pendant
+         le scroll (comme avant) provoquait un recadrage transitoire ou le
+         haut de la porte/l'enseigne se retrouvait coupe. */
+      heroImg.style.transformOrigin = 'center 50%';
+      heroImg.style.objectPosition = 'center 50%';
     }
 
     var br = Math.max(0, BR_START * (1 - easedProgress));
